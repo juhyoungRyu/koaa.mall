@@ -55,7 +55,6 @@
   }
   /* Footer */
   .Footer {
-    width: 100vw;
     height: 320px;
     display: flex;
     flex-direction: column;
@@ -98,6 +97,10 @@
     height: 40px;
     font-size: 40px;
     color: white;
+  }
+
+  .tel {
+    font-size: 17px;
   }
 
   .ftBold {

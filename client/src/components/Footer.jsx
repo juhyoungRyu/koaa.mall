@@ -12,7 +12,7 @@ const Footer = () => {
         <section className="instaZone">
           <AiOutlineInstagram className="instagram" />
         </section>
-        <h4>T. 010-0000-0000</h4>
+        <h4 className="tel">T. 010-0000-0000</h4>
       </section>
       <section className="footerSlim">
         COMPANY: 주식회사 코아 | OWNER: 이정호 <br />
