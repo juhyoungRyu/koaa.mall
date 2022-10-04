@@ -1,0 +1,66 @@
+@media (max-width: 650px) {
+  /* Navigation */
+  .Navigation {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+  }
+
+  .logoZone {
+    width: 50%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    background-color: lightpink;
+    margin-left: 30px;
+    width: 80px;
+    height: 40px;
+  }
+
+  .iconZone {
+    width: 50%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .icon {
+    width: 22px;
+    height: 100%;
+    margin-left: 20px;
+  }
+
+  .i3 {
+    margin-right: 30px;
+  }
+  /* Main carousel */
+  .Main {
+    height: calc(100vh - 60px);
+    background-color: lightgreen;
+  }
+
+  .imgZone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    font-size: 50px;
+    background-color: black;
+  }
+  /* Footer */
+  .Footer {
+    height: 250px;
+    background-color: lightcoral;
+  }
+  /* Compo1 */
+
+  /* Compo2 */
+
+  /* Compo3 */
+}

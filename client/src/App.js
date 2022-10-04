@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* 네비게이션 컴포넌트 */}
+      <Navigation />
+      {/* 메인화면 : Carousel 들어갈 예정 */}
+      <section className="Main">
+        {/* 
+        첫 화면
+        사진 한장씩 슬라이드..
+         */}
+        <div className="imgZone">이미지</div>
+      </section>
+      {/* 사업자 정보 등이 들어갈 컴포넌트 */}
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
