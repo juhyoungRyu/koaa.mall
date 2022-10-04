@@ -1,7 +1,7 @@
 @media (max-width: 650px) {
   * {
     margin: 0;
-    width: 100vw;
+    width: calc(100vw - (100vw - 100%));
   }
 
   .App {
