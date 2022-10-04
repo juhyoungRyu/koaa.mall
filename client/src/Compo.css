@@ -55,7 +55,6 @@
   }
   /* Footer */
   .Footer {
-    width: calc(100vw - (100vw - 100%));
     height: 320px;
     display: flex;
     flex-direction: column;
@@ -70,7 +69,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: calc(100vw - 95 vw);
+    font-size: 23px;
   }
 
   .footerBold {
@@ -98,6 +97,10 @@
     height: 40px;
     font-size: 40px;
     color: white;
+  }
+
+  .tel {
+    font-size: 17px;
   }
 
   .ftBold {
