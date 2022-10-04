@@ -70,7 +70,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: calc(100vw - 95vw);
+    font-size: 23px;
   }
 
   .footerBold {
