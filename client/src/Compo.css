@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: row;
     height: 60px;
+    border-bottom: 1px solid black;
   }
 
   .logoZone {
@@ -60,6 +61,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid black;
   }
 
   .footerTitle {
@@ -132,27 +134,36 @@
   /* Compo3 */
 
   /* SignUp */
-  .SUCon {
-    width: 390px;
-    height: 844px;
+  .Scon {
+    width: 100%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
-  .SUmain {
+  .Smain {
     width: 390px;
-    height: 784px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    text-align: center;
   }
 
-  .SUtit {
-    margin-top: 23px;
-    margin-bottom: 76px;
+  .StitleZone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30%;
+  }
+
+  .Stitle {
+    font-size: 23px;
   }
 
   .id {
@@ -185,7 +196,7 @@
   .createBtn {
     background-color: #335696;
     width: 320px;
-    height: 60px;
+    height: 50px;
     border-radius: 15px;
     border: 0;
     margin-top: 30px;
@@ -195,10 +206,11 @@
     font-size: 17px;
   }
 
-  .SUif {
+  .Sif {
     font-size: 13px;
     color: #444;
-    margin-top: 19px;
+    margin-top: 25px;
+    cursor: pointer;
   }
 
   .outline {
@@ -214,7 +226,7 @@
   }
 
   /* SignIn */
-  .SICon {
+  .SCon {
     width: 390px;
     height: 844px;
     display: flex;
@@ -223,7 +235,7 @@
     border: 1px solid #000;
   }
 
-  .SImain {
+  .Smain {
     width: 390px;
     height: 784px;
     display: flex;
@@ -231,60 +243,8 @@
     align-items: center;
   }
 
-  .SItit {
+  .Stit {
     margin-top: 23px;
     margin-bottom: 76px;
   }
-
-  /* .id {
-  width: 320px; height: 60px;
-}
-.idInput {
-  background-color: #f2f2f2;
-  width: 320px; height: 60px;
-  padding: 0;
-  border: 0;
-  border-radius: 15px;
-}
-
-.pw {
-  width: 320px; height: 60px;
-  margin-top: 19px;
-}
-.pwInput {
-  background-color: #f2f2f2;
-  width: 320px; height: 60px;
-  padding: 0;
-  border: 0;
-  border-radius: 15px;
-} */
-
-  /* .createBtn {
-  background-color: #335696;
-  width: 320px; height: 60px;
-  border-radius: 15px;
-  border: 0;
-  margin-top: 30px;
-}
-.createSpan {
-  color: #fff;
-  font-size: 17px;
-} */
-
-  .SIif {
-    font-size: 13px;
-    color: #444;
-    margin-top: 19px;
-  }
-
-  /* .outline {
-  width: 270px; height: 1px;
-  background-color: #000;
-  margin-top: 70px;
-}
-
-.brand {
-  font-size: 23px;
-  margin-top: 70px;
-} */
 }

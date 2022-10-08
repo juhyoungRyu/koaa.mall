@@ -1,27 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../Compo.css";
 
 const SignInForm = () => {
   return (
-    <div className="SICon">
-      <section className="SUmain">
-        <h3 className="SItit">로그인</h3>
-        <div className="SIid id">
-          <form action="" className="SIidForm idForm">
-            <input type="text" className="SIidInput idInput" />
+    <div className="Scon">
+      <section className="Smain">
+        <section className="StitleZone">
+          <h3 className="Stitle">로그인</h3>
+        </section>
+        <div className="Sid id">
+          <form action="" className="SidForm idForm">
+            <input type="text" className="SidInput idInput" />
           </form>
         </div>
-        <div className="SIpw pw">
-          <form action="" className="SIpwForm pwForm">
-            <input type="text" className="SIpwInput pwInput" />
-          </form>
+        <div className="Spw pw">
+          <input type="text" className="SpwInput pwInput" />
+          <form action="" className="SpwForm pwForm"></form>
         </div>
         <button className="createBtn">
           <span className="createSpan">로그인</span>
         </button>
-        <p className="SIif"></p>
-        <div className="outline"></div>
-        <h3 className="brand">Korean Oriental And Asian</h3>
+        <Link to={"/signup"}>
+          <p className="Sif">계정이 없다면?</p>
+        </Link>
       </section>
     </div>
   );
