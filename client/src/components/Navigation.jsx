@@ -9,6 +9,7 @@ import SideMenu from "./SideMenu";
 
 const Navigation = () => {
 
+  const SideMenu = useRef();
   const openSideMenu = () => {
     SideMenu.current.style.left = "0";
 
