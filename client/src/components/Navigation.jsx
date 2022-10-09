@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../Compo.css";
 import { VscMenu } from "react-icons/vsc";
 import { BsCart4 } from "react-icons/bs";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import logoImg from "../imgs/KOAA.jpg";
+import SideMenu from "./SideMenu";
 
 const Navigation = () => {
+
+  const openSideMenu = () => {
+    SideMenu.current.style.left = "0";
+
+  }
+ 
   return (
     <div className="Navigation">
       <section className="logoZone">
@@ -21,7 +28,7 @@ const Navigation = () => {
           }
         />
         <BsCart4 className="icon i2" />
-        <VscMenu className="icon i3" />
+        <VscMenu className="icon i3" onClick={openSideMenu}/>
       </section>
     </div>
   );
