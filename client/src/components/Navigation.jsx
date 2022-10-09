@@ -4,12 +4,14 @@ import { VscMenu } from "react-icons/vsc";
 import { BsCart4 } from "react-icons/bs";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import logoImg from "../imgs/KOAA.jpg";
 
 const Navigation = () => {
   return (
     <div className="Navigation">
       <section className="logoZone">
-        <Link className="logo" to={"/"} />
+        <Link className="logo" to={"/"}/>
+        {/* <img src={logoImg} alt="" className="logoImg" /> */}
       </section>
       <section className="iconZone">
         <AiOutlineInstagram

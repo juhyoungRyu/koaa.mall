@@ -21,7 +21,7 @@ const SignInForm = () => {
         <button className="createBtn">
           <span className="createSpan">로그인</span>
         </button>
-        <Link to={"/signup"}>
+        <Link className="SLink" to={"/signup"}>
           <p className="Sif">계정이 없다면?</p>
         </Link>
       </section>

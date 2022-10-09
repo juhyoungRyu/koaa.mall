@@ -22,7 +22,7 @@ const SignUpForm = () => {
         <button className="createBtn">
           <span className="createSpan">계정 생성</span>
         </button>
-        <Link to={"/login"}>
+        <Link className="SLink" to={"/login"}>
           <p className="Sif">계정이 이미 있다면?</p>
         </Link>
       </section>
