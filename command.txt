@@ -1,0 +1,3 @@
+MongoDB connect:
+mongosh "mongodb+srv://cluster0.czgkkzb.mongodb.net/myFirstDatabase" --apiVersion 1 --username juhyoung
+pw : 8SZ37RGE4yJicMH7

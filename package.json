@@ -1,0 +1,20 @@
+{
+  "name": "koaa.mall",
+  "version": "1.0.0",
+  "description": "Shopping Mall Project for Fashionable People",
+  "main": "index.js",
+  "scripts": {
+    "fe": "cd client; yarn start",
+    "be": "cd server; source env/bin/activate; uvicorn main:app --reload"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juhyoungRyu/koaa.mall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juhyoungRyu/koaa.mall/issues"
+  },
+  "homepage": "https://github.com/juhyoungRyu/koaa.mall#readme"
+}
