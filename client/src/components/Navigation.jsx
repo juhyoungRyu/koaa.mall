@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "../Compo.css";
 import { VscMenu } from "react-icons/vsc";
 import { BsCart4 } from "react-icons/bs";
@@ -9,10 +9,8 @@ import SideMenu from "./SideMenu";
 
 const Navigation = () => {
 
-  const SideMenu = useRef();
   const openSideMenu = () => {
     SideMenu.current.style.left = "0";
-
   }
  
   return (

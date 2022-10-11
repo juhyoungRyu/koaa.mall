@@ -3,6 +3,9 @@ import "../App.css"
 import logoImg from "../imgs/KOAA.jpg";
 
 const SideMenu = () => {
+
+  
+
   return <div className="SideMenu">
     <div className="SideNav">
       <img className="SideLogoImg" src={ logoImg } alt="" />

@@ -43,7 +43,7 @@ const App = () => {
         {/* 푸터 : 사업자 정보 등이 들어간 컴포넌트 */}
         <Footer/>
       </div>
-      <SideMenu></SideMenu>
+      <SideMenu />
     </div>
   );
 };
