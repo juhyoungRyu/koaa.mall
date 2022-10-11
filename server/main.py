@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Form
 from fastapi.middleware.cors import CORSMiddleware
 from db import db
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -36,6 +37,15 @@ loading_data(item, item_list)
 data['user'] = user_list
 data['item'] = item_list
 
+class Test(BaseModel):
+    id:str
+    pw:str
+
 @app.get('/data')
 def send_data():
     return data
+
+@app.post('/login')
+async def login_test(test:Test):
+    print(test.id, test.pw)
+    return test

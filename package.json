@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "fe": "cd client; yarn start",
-    "be": "cd server; source env/bin/activate; uvicorn main:app --reload"
+    "be": "cd server; source env/bin/activate; uvicorn main:app --reload",
+    "upgrade": "cd client; yarn"
   },
   "repository": {
     "type": "git",
