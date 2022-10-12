@@ -7,18 +7,22 @@ import SignInForm from "./components/SignInForm";
 import SideMenu from "./components/SideMenu";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
+import axios from "axios";
 
 const App = () => {
   const initialData = { test: {} };
   const [data, setData] = useState(initialData);
+
   useEffect(() => {
-    fetchData().then((getData) => setData(getData));
+    fetchData().then((res) => {
+      setData(res);
+    });
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch("/data");
-    const data = await response.json();
-    console.log(data);
+    const response = await axios.get("/data");
+    console.log(response.data);
+    return response.data;
   };
 
   return (

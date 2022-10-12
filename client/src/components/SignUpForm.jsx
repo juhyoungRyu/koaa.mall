@@ -10,15 +10,9 @@ const SignUpForm = () => {
           <h3 className="Stitle">계정 만들기</h3>
         </section>
         <div className="Sid id">
-          <form action="" className="SidForm idForm">
-            <input type="text" className="SidInput idInput" />
-          </form>
+          <input type="text" className="SidInput idInput" />
         </div>
-        <div className="Spw pw">
-          <form action="" className="SpwForm pwForm">
-            <input type="text" className="SpwInput pwInput" />
-          </form>
-        </div>
+        <input type="text" className="SpwInput pwInput" />
         <button className="createBtn">
           <span className="createSpan">계정 생성</span>
         </button>
