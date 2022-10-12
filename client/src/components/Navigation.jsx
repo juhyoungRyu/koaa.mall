@@ -37,7 +37,7 @@ const Navigation = () => {
           <BsCart4 className="icon" />
         </Link>
         <Link className="iconLink i4">
-          <VscMenu className="icon" onClick={openSideMenu} />
+          <VscMenu className="icon" onClick={toggleSM} />
         </Link>
       </section>
     </div>

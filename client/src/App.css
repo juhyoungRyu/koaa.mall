@@ -13,7 +13,7 @@
     overflow: hidden;
   }
 
-  .SideMenu {
+  .sideMenu {
     width: 281px;
     height: calc(100vh - 1px );
     background-color: #909090;
@@ -21,15 +21,19 @@
     flex-direction: column;
     position: absolute;
     left: -281px;
+    transition: 0.2s;
+  }
+  .open {
+    left: 0;
   }
 
-  .SideNav {
+  .sideNav {
     width: 281px;
     height: 60px;
     display: flex;
     align-items: center;
   }
-  .SideLogoImg {
+  .sideLogoImg {
     width: 60px;
     height: 60px;
   }
@@ -55,7 +59,7 @@
     font-size: 15px;
   }
 
-  .SideMain {
+  .sideMain {
     width: 261px;
     height: auto;
     display: flex;
@@ -63,7 +67,7 @@
     padding-top: 90px;
     padding-left: 20px;
   }
-  .SideList {
+  .sideList {
     width: 261px;
     height: 40px;
   }
