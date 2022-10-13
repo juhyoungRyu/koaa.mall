@@ -12,7 +12,12 @@ import axios from "axios";
 const App = () => {
   const initialData = { test: {} };
   const [data, setData] = useState(initialData);
-  const [sm, setSm] = useState('');
+  const [sm, setSm] = useState();
+
+  useEffect(() => {
+    const SM = document.querySelector(".sideMenu");
+    setSm(SM);
+  }, []);
 
   useEffect(() => {
     fetchData().then((res) => {
@@ -21,30 +26,24 @@ const App = () => {
   }, []);
 
   const fetchData = async () => {
-    const response = await axios.get("/data");
+    const response = await axios.get("http://localhost:8000/data");
     console.log(response.data);
     return response.data;
   };
 
-  
-  const toggleSM = () => {
-    // variable.classList.toggle("open");
-    console.log("work")
-  }
-
-  const SM = document.querySelector('.SM');
-
-  const naviToggle = () => {
-    setSm(SM);
-    console.log(sm)
-  }
-
+  const sideMeuToggle = () => {
+    // sm.toggle.add("open");
+    const SM = document.querySelector(".sideMenu");
+    // SM.toggle.add("open");
+    console.log(`이건 변수`, SM);
+    console.log(`이건 스테이트`, sm);
+  };
 
   return (
     <div className="App">
       <div className="entire">
         {/* 네비게이션 : Router를 이용해 페이지를 이동할 수 있게 해주는 컴포넌트 */}
-        <Navigation naviToggle={() => naviToggle} />
+        <Navigation smt={sideMeuToggle} />
         <Routes>
           <Route
             exact
@@ -64,7 +63,31 @@ const App = () => {
         {/* 푸터 : 사업자 정보 등이 들어간 컴포넌트 */}
         <Footer />
       </div>
-      <SideMenu className="SM" />
+      <div className="sideMenu">
+        <div className="sideNav">
+          <img className="sideLogoImg" alt="-" />
+          <div className="SLI">
+            <span className="SLIspan">Login</span>
+          </div>
+          <div className="SJ">
+            <span className="SJspan">Join</span>
+          </div>
+        </div>
+        <div className="sideMain">
+          <div className="sideList">
+            <span className="about list">About</span>
+          </div>
+          <div className="sideList">
+            <span className="lookbook list">Lookbook</span>
+          </div>
+          <div className="sideList">
+            <span className="shop list">Shop</span>
+          </div>
+          <div className="sideList">
+            <span className="cart list">Cart</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

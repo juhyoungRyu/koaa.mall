@@ -9,7 +9,6 @@ import logoImg from "../imgs/KOAA.jpg";
 import SideMenu from "./SideMenu";
 
 const Navigation = (props) => {
-  
   const openSideMenu = () => {
     console.log("side menu open");
   };
@@ -36,7 +35,7 @@ const Navigation = (props) => {
           <BsCart4 className="icon" />
         </Link>
         <Link className="iconLink i4">
-          <VscMenu className="icon" onClick={props.naviToggle()} />
+          <VscMenu className="icon" onClick={() => props.smt()} />
         </Link>
       </section>
     </div>

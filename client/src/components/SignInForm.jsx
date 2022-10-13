@@ -9,7 +9,7 @@ const SignInForm = () => {
 
   const postTest = async () => {
     await axios
-      .post("/login", {
+      .post("http://localhost:8000/login", {
         id: id,
         pw: pw,
         email: "string",
