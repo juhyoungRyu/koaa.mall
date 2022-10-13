@@ -12,6 +12,7 @@ import axios from "axios";
 const App = () => {
   const initialData = { test: {} };
   const [data, setData] = useState(initialData);
+  const [sm, setSm] = useState('');
 
   useEffect(() => {
     fetchData().then((res) => {
@@ -25,11 +26,25 @@ const App = () => {
     return response.data;
   };
 
+  
+  const toggleSM = () => {
+    // variable.classList.toggle("open");
+    console.log("work")
+  }
+
+  const SM = document.querySelector('.SM');
+
+  const naviToggle = () => {
+    setSm(SM);
+    console.log(sm)
+  }
+
+
   return (
     <div className="App">
       <div className="entire">
         {/* 네비게이션 : Router를 이용해 페이지를 이동할 수 있게 해주는 컴포넌트 */}
-        <Navigation />
+        <Navigation naviToggle={() => naviToggle} />
         <Routes>
           <Route
             exact
@@ -49,7 +64,7 @@ const App = () => {
         {/* 푸터 : 사업자 정보 등이 들어간 컴포넌트 */}
         <Footer />
       </div>
-      <SideMenu />
+      <SideMenu className="SM" />
     </div>
   );
 };

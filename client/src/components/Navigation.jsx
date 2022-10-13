@@ -8,10 +8,9 @@ import { Link } from "react-router-dom";
 import logoImg from "../imgs/KOAA.jpg";
 import SideMenu from "./SideMenu";
 
-const Navigation = () => {
-  // const SideMenu = useRef();
+const Navigation = (props) => {
+  
   const openSideMenu = () => {
-    // SideMenu.current.style.left = "0";
     console.log("side menu open");
   };
 
@@ -37,7 +36,7 @@ const Navigation = () => {
           <BsCart4 className="icon" />
         </Link>
         <Link className="iconLink i4">
-          <VscMenu className="icon" onClick={toggleSM} />
+          <VscMenu className="icon" onClick={props.naviToggle()} />
         </Link>
       </section>
     </div>

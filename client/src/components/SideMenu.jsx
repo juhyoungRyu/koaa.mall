@@ -1,17 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "../App.css"
 import logoImg from "../imgs/KOAA.jpg";
 import Navigation from "./Navigation";
 
 const SideMenu = () => {
 
-  const [sideMenu, addOpen] = useState("false");
-
-  const toggleSM = () => {
-    addOpen(!open);
-  }
-
-  return <div className={sideMenu ? open : null}>
+  return <div className="sideMenu">
     <div className="sideNav">
       <img className="sideLogoImg" src={ logoImg } alt="" />
       <div className="SLI">
