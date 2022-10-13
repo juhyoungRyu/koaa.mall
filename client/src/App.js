@@ -4,10 +4,10 @@ import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import SignUpForm from "./components/SignUpForm";
 import SignInForm from "./components/SignInForm";
-import SideMenu from "./components/SideMenu";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import axios from "axios";
+import logoImg from "./imgs/KOAA.jpg";
 
 const App = () => {
   const initialData = { test: {} };
@@ -32,11 +32,10 @@ const App = () => {
   };
 
   const sideMeuToggle = () => {
-    // sm.toggle.add("open");
     const SM = document.querySelector(".sideMenu");
-    // SM.toggle.add("open");
-    console.log(`이건 변수`, SM);
-    console.log(`이건 스테이트`, sm);
+    SM.classList.toggle("open");
+    // console.log(`이건 변수`, SM);
+    // console.log(`이건 스테이트`, sm);
   };
 
   return (
@@ -65,7 +64,7 @@ const App = () => {
       </div>
       <div className="sideMenu">
         <div className="sideNav">
-          <img className="sideLogoImg" alt="-" />
+          <img className="sideLogoImg" src={logoImg} alt="-" />
           <div className="SLI">
             <span className="SLIspan">Login</span>
           </div>
