@@ -34,8 +34,6 @@ const App = () => {
   const sideMeuToggle = () => {
     const SM = document.querySelector(".sideMenu");
     SM.classList.toggle("open");
-    // console.log(`이건 변수`, SM);
-    // console.log(`이건 스테이트`, sm);
   };
 
   return (
@@ -62,6 +60,7 @@ const App = () => {
         {/* 푸터 : 사업자 정보 등이 들어간 컴포넌트 */}
         <Footer />
       </div>
+      {/* 사이드메뉴 */}
       <div className="sideMenu">
         <div className="sideNav">
           <img className="sideLogoImg" src={logoImg} alt="-" />

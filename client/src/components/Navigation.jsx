@@ -9,9 +9,9 @@ import logoImg from "../imgs/KOAA.jpg";
 import SideMenu from "./SideMenu";
 
 const Navigation = (props) => {
-  const openSideMenu = () => {
-    console.log("side menu open");
-  };
+  // const openSideMenu = () => {
+  //   console.log("side menu open");
+  // };
 
   return (
     <div className="Navigation">

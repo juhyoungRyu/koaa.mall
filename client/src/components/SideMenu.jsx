@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import logoImg from "../imgs/KOAA.jpg";
-import Navigation from "./Navigation";
 
 const SideMenu = () => {
   return (

@@ -16,16 +16,16 @@
   }
 
   .logo {
-    background-color: lightpink;
+    background-image: url("./imgs/KOAA.jpg");
     margin-left: 20px;
-    width: 80px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
 
-  .logoImg {
+  /* .logoImg {
     width: 100%;
     height: 100%;
-  }
+  } */
 
   .iconZone {
     width: 40%;
