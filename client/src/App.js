@@ -72,6 +72,7 @@ const App = ({ history }) => {
         {/* 푸터 : 사업자 정보 등이 들어간 컴포넌트 */}
         <Footer />
       </div>
+      {/* 사이드메뉴 */}
       <div className="sideMenu">
         <div className="sideNav">
           <img className="sideLogoImg" src={logoImg} alt="-" />
