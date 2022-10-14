@@ -44,7 +44,7 @@ const SignInForm = () => {
             </button>
           </div>
         </div>
-        <Link className="SLink" to={"/signup"}>
+        <Link className="SLink" to={"/join"}>
           <p className="Sif">계정이 없다면?</p>
         </Link>
       </section>
