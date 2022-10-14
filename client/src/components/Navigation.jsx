@@ -16,8 +16,9 @@ const Navigation = (props) => {
   return (
     <div className="Navigation">
       <section className="logoZone">
-        <Link className="logo" to={"/"} />
-        {/* <img src={logoImg} alt="" className="logoImg" /> */}
+        <Link className="logo" to={"/"} >
+          <img src={logoImg} alt="" className="logoImg" />
+        </Link>
       </section>
       <section className="iconZone">
         <Link
