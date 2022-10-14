@@ -75,7 +75,9 @@ const App = ({ history }) => {
       {/* 사이드메뉴 */}
       <div className="sideMenu">
         <div className="sideNav">
-          <img className="sideLogoImg" src={logoImg} alt="-" />
+          <Link className="logo" to={"/"} >
+            <img className="sideLogoImg" src={logoImg} alt="-" />
+          </Link>
           <div className="SLI">
             <Link to={"/login"}>
               <span className="SLIspan">Login</span>
