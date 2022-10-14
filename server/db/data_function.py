@@ -31,6 +31,6 @@ def create_user(id, pw, email, name, call):
     return {"id" : id, 'pw' : pw, 'email' : email, 'name' : name, 'call': call}
 
 def check_unique(db, target):
-    if(db.find_one({"id" : target['id']}) or db.find_one({"email" : target['email']}) == None):
+    if(db.find_one({"id" : target['id']}) and db.find_one({"email" : target['email']}) == None):
         return False
     return True
