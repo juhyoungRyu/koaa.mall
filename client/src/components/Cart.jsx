@@ -4,7 +4,7 @@ import "../Compo.css";
 const Cart = () => {
 
     return(
-        <div className="Cart"></div>
+        <div className="Cart">cart</div>
     );
 };
 
