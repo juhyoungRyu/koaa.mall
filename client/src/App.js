@@ -97,15 +97,17 @@ const App = () => {
           <Link className="logo" to={"/"}>
             <img className="sideLogoImg" src={logoImg} alt="-" />
           </Link>
-          <div className="SLI">
-            <Link to={"/login"}>
-              <span className="SLIspan">Login</span>
-            </Link>
-          </div>
-          <div className="SJ">
-            <Link to={"/join"}>
-              <span className="SJspan">Join</span>
-            </Link>
+          <div className="S_btnCon">
+            <div className="SLI">
+              <Link to={"/login"}>
+                <span className="SLIspan">Login</span>
+              </Link>
+            </div>
+            <div className="SJ">
+              <Link to={"/join"}>
+                <span className="SJspan">Join</span>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="sideMain">

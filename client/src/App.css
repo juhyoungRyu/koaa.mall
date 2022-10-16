@@ -38,13 +38,18 @@
     height: 60px;
   }
   
+  .S_btnCon {
+    width: 120px;
+    height: 60px;
+    display: flex;
+    margin-left: 20px;
+  }
   .SLI {
     width: 60px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;
   }
   .SLIspan {
     color: #fff;
