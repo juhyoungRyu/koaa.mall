@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Compo.css";
 import axios from "axios";
 
 const SignInForm = () => {
+  const navigate = useNavigate();
+
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
@@ -13,7 +15,13 @@ const SignInForm = () => {
         id: id,
         pw: pw,
       })
-      .then((res) => alert(JSON.stringify(res.data)));
+      .then((res) => {
+        if (typeof res.data === "string") {
+          alert(JSON.stringify(res.data));
+        } else {
+          navigate("/", { state: { value: res.data } });
+        }
+      });
   };
 
   return (

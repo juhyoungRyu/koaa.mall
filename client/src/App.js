@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
@@ -6,18 +8,23 @@ import SignUpForm from "./components/SignUpForm";
 import SignInForm from "./components/SignInForm";
 import About from "./components/About";
 import Mypage from "./components/Mypage";
-import Cart from "./components/Cart"
-import { Routes, Route, Link } from "react-router-dom";
+import Cart from "./components/Cart";
 import NotFound from "./components/NotFound";
 import axios from "axios";
 import logoImg from "./imgs/KOAA.jpg";
-import { useLocation } from "react-router-dom";
 
-const App = ({ history }) => {
+const App = () => {
   const initialData = { test: {} };
   const location = useLocation();
   const [data, setData] = useState(initialData);
   const [loc, setLoc] = useState(location.pathname);
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    fetchData().then((res) => {
+      setData(res);
+    });
+  }, []);
 
   const fetchData = async () => {
     const response = await axios.get("/data");
@@ -37,10 +44,16 @@ const App = ({ history }) => {
   }, [location.pathname]);
 
   useEffect(() => {
-    fetchData().then((res) => {
-      setData(res);
-    });
+    setIsLogin(() => checkLogin());
+    console.log(isLogin);
   }, []);
+
+  const checkLogin = () => {
+    if (location.state === null) {
+      return false;
+    }
+    return location.state.value;
+  };
 
   const sideMenuToggle = () => {
     const SM = document.querySelector(".sideMenu");

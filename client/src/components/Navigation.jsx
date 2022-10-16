@@ -6,17 +6,12 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import logoImg from "../imgs/KOAA.jpg";
-import SideMenu from "./SideMenu";
 
 const Navigation = (props) => {
-  // const openSideMenu = () => {
-  //   console.log("side menu open");
-  // };
-
   return (
     <div className="Navigation">
       <section className="logoZone">
-        <Link className="logo" to={"/"} >
+        <Link className="logo" to={"/"}>
           <img src={logoImg} alt="" className="logoImg" />
         </Link>
       </section>
