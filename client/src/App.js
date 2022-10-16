@@ -44,16 +44,8 @@ const App = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    setIsLogin(() => checkLogin());
-    console.log(isLogin);
-  }, []);
-
-  const checkLogin = () => {
-    if (location.state === null) {
-      return false;
-    }
-    return location.state.value;
-  };
+    console.log(location.state);
+  }, [location.pathname]);
 
   const sideMenuToggle = () => {
     const SM = document.querySelector(".sideMenu");
