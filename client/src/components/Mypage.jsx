@@ -15,12 +15,21 @@ const Mypage = () => {
                     <div className="M_setting"></div>
                 </div>
                 <div className="M_buttonCon">
-                    <div className="M_cart">장바구니</div>
-                    <div className="M_question">문의사항</div>
+                    <div className="M_cart">
+                        <span className="M_Span">장바구니</span>
+                    </div>
+                    <div className="M_question">
+                        <span className="M_Span">문의사항</span>
+                    </div>
                 </div>
             </div>
-            <div className="M_orderH">
-                
+            <div className="M_orderHist">
+                <span className="M_orderTit">주문내역</span>
+                <div className="M_orderCon">
+                    <div className="pdtForm"></div>
+                    <div className="pdtForm"></div>
+                    <div className="more">더보기</div>
+                </div>
             </div>
         </div>
     );
