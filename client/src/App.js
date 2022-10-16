@@ -14,11 +14,21 @@ import axios from "axios";
 import logoImg from "./imgs/KOAA.jpg";
 
 const App = () => {
+  const KEY = "@loginData";
   const initialData = { test: {} };
   const location = useLocation();
   const [data, setData] = useState(initialData);
   const [loc, setLoc] = useState(location.pathname);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(() => {
+    if (typeof window != "undefined") {
+      const saved = window.localStorage.getItem(KEY);
+      if (saved !== null) {
+        return JSON.parse(saved);
+      } else {
+        return null;
+      }
+    }
+  });
 
   useEffect(() => {
     fetchData().then((res) => {
@@ -41,10 +51,6 @@ const App = () => {
       }
       setLoc(location.pathname);
     }
-  }, [location.pathname]);
-
-  useEffect(() => {
-    console.log(location.state);
   }, [location.pathname]);
 
   const sideMenuToggle = () => {
@@ -72,7 +78,10 @@ const App = () => {
               </section>
             }
           />
-          <Route path="/login" element={<SignInForm />} />
+          <Route
+            path="/login"
+            element={<SignInForm setIsLogin={setIsLogin} />}
+          />
           <Route path="/join" element={<SignUpForm />} />
           <Route path="/about" element={<About />} />
           <Route path="/mypage" element={<Mypage />} />
@@ -89,18 +98,24 @@ const App = () => {
           <Link className="logo" to={"/"}>
             <img className="sideLogoImg" src={logoImg} alt="-" />
           </Link>
-          <div className="S_btnCon">
-            <div className="SLI">
-              <Link to={"/login"}>
-                <span className="SLIspan">Login</span>
-              </Link>
+          {isLogin === null ? (
+            <div className="S_btnCon">
+              <div className="SLI">
+                <Link to={"/login"}>
+                  <span className="SLIspan">Login</span>
+                </Link>
+              </div>
+              <div className="SJ">
+                <Link to={"/join"}>
+                  <span className="SJspan">Join</span>
+                </Link>
+              </div>
             </div>
-            <div className="SJ">
-              <Link to={"/join"}>
-                <span className="SJspan">Join</span>
-              </Link>
+          ) : (
+            <div className="S_btnCon">
+              <p className="S_userName">{isLogin.name}</p>
             </div>
-          </div>
+          )}
         </div>
         <div className="sideMain">
           <div className="sideList">

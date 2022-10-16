@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Compo.css";
 import axios from "axios";
 
-const SignInForm = () => {
+const SignInForm = (props) => {
   const KEY = "@loginData";
   const navigate = useNavigate();
 
@@ -21,6 +21,7 @@ const SignInForm = () => {
           alert(JSON.stringify(res.data));
         } else {
           localStorage.setItem(KEY, JSON.stringify(res.data));
+          props.setIsLogin(JSON.parse(localStorage.getItem(KEY)));
           navigate("/");
         }
       });

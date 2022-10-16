@@ -8,14 +8,14 @@
     display: flex;
     width: 100%;
   }
-  
+
   .entire {
     overflow: hidden;
   }
 
   .sideMenu {
     width: 281px;
-    height: calc(100vh - 1px );
+    height: calc(100vh - 1px);
     background-color: #909090;
     display: flex;
     flex-direction: column;
@@ -37,13 +37,20 @@
     width: 60px;
     height: 60px;
   }
-  
+
   .S_btnCon {
     width: 120px;
     height: 60px;
     display: flex;
     margin-left: 20px;
+    align-items: center;
   }
+
+  .S_userName {
+    font-size: 20px;
+    color: white;
+  }
+
   .SLI {
     width: 60px;
     height: 100%;
