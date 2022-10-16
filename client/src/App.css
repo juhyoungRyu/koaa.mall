@@ -40,9 +40,11 @@
   
   .SLI {
     width: 60px;
-    height: 30px;
-    text-align: center;
-    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
   }
   .SLIspan {
     color: #fff;
@@ -51,8 +53,10 @@
 
   .SJ {
     width: 60px;
-    height: 30px;
-    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .SJspan {
     color: #fff;
