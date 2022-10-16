@@ -4,6 +4,7 @@ import "../Compo.css";
 import axios from "axios";
 
 const SignInForm = () => {
+  const KEY = "@loginData";
   const navigate = useNavigate();
 
   const [id, setId] = useState("");
@@ -19,7 +20,8 @@ const SignInForm = () => {
         if (typeof res.data === "string") {
           alert(JSON.stringify(res.data));
         } else {
-          navigate("/", { state: { value: res.data } });
+          localStorage.setItem(KEY, JSON.stringify(res.data));
+          navigate("/");
         }
       });
   };
