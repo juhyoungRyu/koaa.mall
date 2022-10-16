@@ -215,6 +215,36 @@
     outline: none;
   }
 
+  .SnameInput {
+    margin-top: 10px;
+    background-color: #f2f2f2;
+    width: 320px;
+    height: 60px;
+    padding: 0;
+    border: 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .SnameInput:focus {
+    outline: none;
+  }
+
+  .SemailInput {
+    margin-top: 10px;
+    background-color: #f2f2f2;
+    width: 320px;
+    height: 60px;
+    padding: 0;
+    border: 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .SemailInput:focus {
+    outline: none;
+  }
+
   .createBtn {
     background-color: #335696;
     width: 320px;

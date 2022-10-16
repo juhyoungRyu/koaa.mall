@@ -17,10 +17,16 @@ const App = ({ history }) => {
   const [loc, setLoc] = useState(location.pathname);
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:8000/data");
+    const response = await axios.get("/data");
     console.log(response.data);
     return response.data;
   };
+
+  useEffect(() => {
+    fetchData().then((res) => {
+      setData(res);
+    });
+  }, []);
 
   useEffect(() => {
     const v = document.querySelector(".sideMenu").classList.value;
@@ -33,6 +39,7 @@ const App = ({ history }) => {
     }
   }, [location.pathname]);
 
+<<<<<<< HEAD
   useEffect(() => {
     fetchData().then((res) => {
       setData(res);
@@ -40,6 +47,9 @@ const App = ({ history }) => {
   }, []);
 
   const sideMenuToggle = () => {
+=======
+  const sideMeuToggle = () => {
+>>>>>>> c9e824b (22.10.15 : 회원가입 구현 중)
     const SM = document.querySelector(".sideMenu");
     if (SM.classList.value === "sideMenu open") {
       SM.classList.toggle("open");
@@ -75,7 +85,7 @@ const App = ({ history }) => {
       {/* 사이드메뉴 */}
       <div className="sideMenu">
         <div className="sideNav">
-          <Link className="logo" to={"/"} >
+          <Link className="logo" to={"/"}>
             <img className="sideLogoImg" src={logoImg} alt="-" />
           </Link>
           <div className="SLI">

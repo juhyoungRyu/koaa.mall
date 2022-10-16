@@ -7,11 +7,13 @@ class Login_user(BaseModel):
     pw:str
 
 class Create_user(BaseModel):
-    id : str
-    pw : str
-    email : str
-    joinDate : str
-    
+    # id : str
+    # pw : str
+    # email : str
+    # name : str
+    # call : str
+    # josin_date : str
+    data : object
 # 아이템 모델
 
 class Item(BaseModel):

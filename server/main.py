@@ -1,3 +1,4 @@
+from subprocess import call
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from db import database
@@ -33,6 +34,23 @@ async def login_test(user:Models.Login_user):
     print(result)
     return result
 
-@app.get('/login')
-async def login_value_test():
-    return {"hello" : 'hello'}
+@app.post('/join')
+async def join_test(join_user : Models.Create_user):
+    id = join_user.data['id']
+    # pw = data_function.pwd_context.hash(join_user.pw)
+    # pw = join_user.pw
+    # email = join_user.email
+    # name = join_user.name
+    # "call" = user.call,
+    # join_data = join_user.join_date
+    
+    new_user = {
+        # "id" : id,
+        # "pw" : pw,
+        # "email" : email,
+        # "name" : name,
+        # "join_date" : join_data
+    }
+    # print(new_user)
+    # return new_user
+    return id
