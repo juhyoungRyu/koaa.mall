@@ -159,9 +159,10 @@
   .brandSpan {
     width: auto;
     height: auto;
-    margin-left: 35px;
     display: flex;
     flex-direction: column;
+    margin-left: 35px;
+    margin-top: 20px;
   }
   .KOAA {
     font-size: 25px;
@@ -186,11 +187,22 @@
     margin-top: 20px;
   }
   .A_img {
-    width: 315px;
+    width: 345px;
     height: 210px;
     background-color: #c4c4c4;
     margin-top: 21px;
     margin-bottom: 21px;
+  }
+  .ex {
+    width: auto;
+    text-align: center;
+  }
+  .kor {
+    margin-bottom: 12px;
+  }
+  .eng {
+    margin-top: 12px;
+    margin-bottom: 40px;
   }
   .A_explain {
     width: auto;
@@ -199,7 +211,85 @@
 
 
 
-  /* Compo2 */
+  /* Mypage */
+  .Mypage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .M_title {
+    width: auto;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  .M_upper {
+    width: 100%;
+    height: 143px;
+    display: flex;
+    flex-direction: column;
+  }
+  .M_profileCon {
+    width: 100%;
+    height: 93px;
+    background-color: #335696;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .M_profileDiv {
+    width: 70px;
+    height: 70px;
+    background-color: #c4c4c4;
+    border-radius: 45px;
+    margin-left: 10px;
+  }
+  .profileImg {
+    width: 70px;
+    height: 70px;
+    border-radius: 45px;
+  }
+  .M_id {
+    width: auto;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 15px;
+  }
+  .M_setting {
+    width: 30px;
+    height: 30px;
+    background-color: #c4c4c4;
+    border-radius: 15px;
+    margin-left: 245px;
+  }
+
+  .M_buttonCon {
+    width: 100%;
+    height: 50px;
+    background-color: #d9d9d9;
+    display: flex;
+
+  }
+  .M_cart {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  .M_question {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+
+
+
 
   /* Compo3 */
 

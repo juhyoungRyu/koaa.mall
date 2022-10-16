@@ -29,7 +29,7 @@ const Navigation = (props) => {
         >
           <AiOutlineInstagram className="icon" />
         </Link>
-        <Link className="iconLink" to={"/login"}>
+        <Link className="iconLink" to={"/mypage"}>
           <AiOutlineUser className="icon" />
         </Link>
         <Link className="iconLink" to={"/cart"}>
