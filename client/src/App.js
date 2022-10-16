@@ -20,7 +20,7 @@ const App = ({ history }) => {
   const [loc, setLoc] = useState(location.pathname);
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:8000/data");
+    const response = await axios.get("/data");
     console.log(response.data);
     return response.data;
   };
@@ -81,7 +81,7 @@ const App = ({ history }) => {
       {/* 사이드메뉴 */}
       <div className="sideMenu">
         <div className="sideNav">
-          <Link className="logo" to={"/"} >
+          <Link className="logo" to={"/"}>
             <img className="sideLogoImg" src={logoImg} alt="-" />
           </Link>
           <div className="SLI">

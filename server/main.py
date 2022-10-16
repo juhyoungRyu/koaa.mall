@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from subprocess import call
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from db import database
 from db import data_function
@@ -33,6 +34,15 @@ async def login_test(user:Models.Login_user):
     print(result)
     return result
 
-@app.get('/login')
-async def login_value_test():
-    return {"hello" : 'hello'}
+@app.post('/join')
+async def join_test(join_user : Models.Create_user):
+    is_unique = data_function.check_unique(database.user, join_user)
+    if is_unique is False:
+        return {"error" : "This account already exists"}
+    new_user = data_function.create_user(join_user.id, join_user.pw, join_user.email, join_user.name)
+    
+    try:
+        database.user.insert_one(new_user)
+        return {'success' : 'Success to create user'}
+    except:
+        return {'error' : 'Failed to create user'}

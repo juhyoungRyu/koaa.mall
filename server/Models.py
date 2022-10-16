@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 # 유저 모델
 
@@ -9,8 +9,10 @@ class Login_user(BaseModel):
 class Create_user(BaseModel):
     id : str
     pw : str
-    email : str
-    joinDate : str
+    email : EmailStr
+    name : str
+    join_date : str
+    # call : str
     
 # 아이템 모델
 
