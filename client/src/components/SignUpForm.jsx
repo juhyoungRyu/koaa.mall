@@ -15,21 +15,34 @@ const SignUpForm = () => {
 
   const changeData = (e, key) => {
     let temp = [...joinData];
-    temp[key] = e.target.value;
+    temp[0][key] = e.target.value;
     setJoinData(temp);
   };
 
   const fetchJoinData = async () => {
+    if (
+      joinData[0].id === "" ||
+      joinData[0].pw === "" ||
+      joinData[0].email === "" ||
+      joinData[0].name === ""
+    ) {
+      alert("모든 항목을 작성해주세요!");
+      return;
+    }
     await axios
       .post("/join", {
-        // id: joinData.id,
-        // pw: joinData.pw,
-        // email: joinData.email,
-        // name: joinData.name,
-        // join_data: JSON.stringify(Date.now()),
-        data: joinData,
+        id: joinData[0].id,
+        pw: joinData[0].pw,
+        email: joinData[0].email,
+        name: joinData[0].name,
+        join_date: Date.now(),
       })
-      .then((res) => console.log(res.data));
+      .then((res) => console.log(res.data))
+      .catch((e) => {
+        if (e.response.status === 422) {
+          alert("Is not a valied Email form");
+        }
+      });
   };
 
   return (

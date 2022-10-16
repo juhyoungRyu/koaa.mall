@@ -23,12 +23,6 @@ const App = ({ history }) => {
   };
 
   useEffect(() => {
-    fetchData().then((res) => {
-      setData(res);
-    });
-  }, []);
-
-  useEffect(() => {
     const v = document.querySelector(".sideMenu").classList.value;
 
     if (loc !== location.pathname) {
@@ -39,7 +33,6 @@ const App = ({ history }) => {
     }
   }, [location.pathname]);
 
-<<<<<<< HEAD
   useEffect(() => {
     fetchData().then((res) => {
       setData(res);
@@ -47,9 +40,6 @@ const App = ({ history }) => {
   }, []);
 
   const sideMenuToggle = () => {
-=======
-  const sideMeuToggle = () => {
->>>>>>> c9e824b (22.10.15 : 회원가입 구현 중)
     const SM = document.querySelector(".sideMenu");
     if (SM.classList.value === "sideMenu open") {
       SM.classList.toggle("open");
