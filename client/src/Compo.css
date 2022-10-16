@@ -30,14 +30,14 @@
     height: 60px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
   }
 
   .iconLink {
-    /* display: flex;
+    display: flex;
     align-items: center;
-    justify-content: flex-start; */
+    justify-content: center;
     width: 40px;
     height: 40px;
   }
@@ -46,7 +46,7 @@
     width: 20px;
     height: 100%;
     cursor: pointer;
-    margin-left: 20px;
+    /* margin-left: 40px; */
   }
 
   .i4 {
@@ -102,10 +102,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:  black;
+    background-color: black;
     border-radius: 100px;
     margin-bottom: 10px;
-    
   }
 
   .instagram {
@@ -196,8 +195,6 @@
     width: auto;
     font-size: 15px;
   }
-
-
 
   /* Compo2 */
 
