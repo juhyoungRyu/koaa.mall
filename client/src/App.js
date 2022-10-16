@@ -27,7 +27,7 @@ const App = ({ history }) => {
 
     if (loc !== location.pathname) {
       if (v === "sideMenu open") {
-        sideMeuToggle();
+        sideMenuToggle();
       }
       setLoc(location.pathname);
     }
@@ -39,7 +39,7 @@ const App = ({ history }) => {
     });
   }, []);
 
-  const sideMeuToggle = () => {
+  const sideMenuToggle = () => {
     const SM = document.querySelector(".sideMenu");
     if (SM.classList.value === "sideMenu open") {
       SM.classList.toggle("open");
@@ -52,7 +52,7 @@ const App = ({ history }) => {
     <div className="App">
       <div className="entire">
         {/* 네비게이션 : Router를 이용해 페이지를 이동할 수 있게 해주는 컴포넌트 */}
-        <Navigation smt={sideMeuToggle} />
+        <Navigation smt={sideMenuToggle} />
         <Routes>
           <Route
             exact
