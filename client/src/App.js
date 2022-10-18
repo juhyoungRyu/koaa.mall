@@ -12,7 +12,7 @@ import Cart from "./components/Cart";
 import Shop from "./components/Shop";
 import NotFound from "./components/NotFound";
 import axios from "axios";
-import logoImg from "./imgs/KOAA.jpg";
+import logoImg from "./imgs/KOAA LOGO OG (1).png";
 
 
 const App = () => {

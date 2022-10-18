@@ -5,7 +5,7 @@ import { BsCart4 } from "react-icons/bs";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import logoImg from "../imgs/KOAA.jpg";
+import logoImg from "../imgs/KOAA LOGO OG (1).png";
 
 const Navigation = (props) => {
   return (
