@@ -39,7 +39,7 @@ const App = () => {
   }, []);
 
   const fetchData = async () => {
-    const response = await axios.get("/data");
+    const response = await axios.get("http://localhost:8000/data");
     console.log(response.data);
     return response.data;
   };
