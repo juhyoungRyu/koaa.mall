@@ -1,4 +1,8 @@
 @media (max-width: 650px) {
+  @import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap');
+  body {
+    font-family: 'Asap', sans-serif;
+  }
   /* Navigation */
   .Navigation {
     display: flex;
@@ -334,10 +338,75 @@
     margin-top: 5px;
   }
 
+  /* Shop */
+  .Shop {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .shopNav {
+    width: 288px;
+    height: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .S_productsCon {
+    width: 360px;
+    height: 690px;
+    display: grid;
+    grid-template-columns: repeat(2, 165px);
+    grid-template-rows: repeat(3, 203px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .S_product {
+    width: 165px;
+    height: 203px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .S_pdtImg {
+    width: 165px;
+    height: 165px;
+    background-color: #c4c4c4;
+  }
+  .S_pdtName {
+    width: auto;
+    font-size: 9px;
+  }
+  .S_price {
+    width: auto;
+    font-size: 9px;
+  }
 
 
 
-  /* Compo3 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* SignUp */
   .Scon {

@@ -9,9 +9,11 @@ import SignInForm from "./components/SignInForm";
 import About from "./components/About";
 import Mypage from "./components/Mypage";
 import Cart from "./components/Cart";
+import Shop from "./components/Shop";
 import NotFound from "./components/NotFound";
 import axios from "axios";
 import logoImg from "./imgs/KOAA.jpg";
+
 
 const App = () => {
   const KEY = "@loginData";
@@ -86,6 +88,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
         {/* 메인화면 : Carousel 들어갈 예정 */}
