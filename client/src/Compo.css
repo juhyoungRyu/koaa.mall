@@ -345,6 +345,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
+    overflow: scroll;
   }
   .shopNav {
     width: 288px;
@@ -352,6 +354,9 @@
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
+  }
+  .usher {
+    cursor: pointer;
   }
   
   .S_productsCon {
@@ -370,6 +375,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    cursor: pointer;
   }
   .S_pdtImg {
     width: 165px;
@@ -379,10 +385,12 @@
   .S_pdtName {
     width: auto;
     font-size: 9px;
+    padding-top: 5px;
   }
   .S_price {
     width: auto;
     font-size: 9px;
+    padding-top: 5px;
   }
 
 
