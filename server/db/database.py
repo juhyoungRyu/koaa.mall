@@ -8,10 +8,3 @@ koaa = client[setting.db_name]
 
 user = koaa['user']
 item = koaa['item']
-
-
-# if(data_function.check_unique(user, new_user) != True):
-#     user.insert_one(new_user)
-#     print('success')
-# else:
-#     print('error')

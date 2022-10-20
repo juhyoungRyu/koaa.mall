@@ -14,7 +14,6 @@ import NotFound from "./components/NotFound";
 import axios from "axios";
 import logoImg from "./imgs/KOAA LOGO OG (1).png";
 
-
 const App = () => {
   const KEY = "@loginData";
   const initialData = { test: {} };
@@ -40,7 +39,6 @@ const App = () => {
 
   const fetchData = async () => {
     const response = await axios.get("http://localhost:8000/data");
-    console.log(response.data);
     return response.data;
   };
 
@@ -53,7 +51,7 @@ const App = () => {
       }
       setLoc(location.pathname);
     }
-  }, [location.pathname]);
+  }, [location.pathname, loc]);
 
   const sideMenuToggle = () => {
     const SM = document.querySelector(".sideMenu");
@@ -68,7 +66,7 @@ const App = () => {
     <div className="App">
       <div className="entire">
         {/* 네비게이션 : Router를 이용해 페이지를 이동할 수 있게 해주는 컴포넌트 */}
-        <Navigation smt={sideMenuToggle} />
+        <Navigation smt={sideMenuToggle} isLogin={isLogin} />
         <Routes>
           <Route
             exact
@@ -76,7 +74,9 @@ const App = () => {
             element={
               <section className="Main">
                 {/* 첫 화면 : 사진 한장씩 슬라이드..*/}
-                <div className="imgZone">이미지</div>
+                <div className="imgZone" onClick={() => console.log(data)}>
+                  이미지
+                </div>
               </section>
             }
           />
@@ -86,7 +86,7 @@ const App = () => {
           />
           <Route path="/join" element={<SignUpForm />} />
           <Route path="/about" element={<About />} />
-          <Route path="/mypage" element={<Mypage />} />
+          <Route path="/mypage" element={<Mypage isLogin={isLogin} />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/*" element={<NotFound />} />
