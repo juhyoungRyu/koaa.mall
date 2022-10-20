@@ -393,31 +393,8 @@
     padding-top: 5px;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   /* SignUp */
-  .Scon {
+  .SUcon {
     width: 100%;
     height: 500px;
     display: flex;
@@ -428,7 +405,7 @@
     margin-bottom: 20px;
   }
 
-  .Smain {
+  .SUmain {
     width: 390px;
     display: flex;
     flex-direction: column;
@@ -437,7 +414,7 @@
     text-align: center;
   }
 
-  .StitleZone {
+  .SUtitleZone {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -445,7 +422,7 @@
     height: 30%;
   }
 
-  .Stitle {
+  .SUtitle {
     font-size: 23px;
   }
 
@@ -487,7 +464,7 @@
     outline: none;
   }
 
-  .SnameInput {
+  .SUnameInput {
     margin-top: 10px;
     background-color: #f2f2f2;
     width: 320px;
@@ -498,11 +475,11 @@
     text-align: center;
     font-size: 15px;
   }
-  .SnameInput:focus {
+  .SUnameInput:focus {
     outline: none;
   }
 
-  .SemailInput {
+  .SUemailInput {
     margin-top: 10px;
     background-color: #f2f2f2;
     width: 320px;
@@ -513,7 +490,7 @@
     text-align: center;
     font-size: 15px;
   }
-  .SemailInput:focus {
+  .SUemailInput:focus {
     outline: none;
   }
 
@@ -531,14 +508,14 @@
     font-size: 17px;
   }
 
-  .SLink {
-    width: 120px;
+  .SULink, .SILink {
+    width: auto;
     height: 25px;
     margin-top: 20px;
   }
 
-  .Sif {
-    width: 120px;
+  .SUif, .SIif {
+    width: auto;
     height: 25px;
     font-size: 13px;
     color: #444;
@@ -558,26 +535,35 @@
   }
 
   /* SignIn */
-  .SCon {
-    width: 390px;
-    height: 844px;
+  .SIcon {
+    width: 100%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #000;
+    justify-content: center;
   }
 
-  .Smain {
+  .SImain {
     width: 390px;
-    height: 784px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    text-align: center;
   }
 
-  .Stit {
-    margin-top: 23px;
-    margin-bottom: 76px;
+  .SItitleZone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+  }
+
+  .SItitle {
+    font-size: 23px;
+    margin-bottom: 50px;
   }
 
   /* NotFound */

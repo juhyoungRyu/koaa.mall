@@ -28,23 +28,23 @@ const SignInForm = (props) => {
   };
 
   return (
-    <div className="Scon">
-      <section className="Smain">
-        <section className="StitleZone">
-          <h3 className="Stitle">로그인</h3>
+    <div className="SIcon">
+      <section className="SImain">
+        <section className="SItitleZone">
+          <h3 className="SItitle">로그인</h3>
         </section>
-        <div className="Sid id">
-          <div className="SidForm idForm">
+        <div className="SIid id">
+          <div className="SIidForm idForm">
             <input
               type="text"
-              className="SidInput idInput"
+              className="SIidInput idInput"
               value={id}
               onChange={(e) => setId(e.target.value)}
             />
             <input
               type="password"
               autoComplete="on"
-              className="SpwInput pwInput"
+              className="SIpwInput pwInput"
               value={pw}
               onChange={(e) => setPw(e.target.value)}
             />
@@ -53,8 +53,8 @@ const SignInForm = (props) => {
             </button>
           </div>
         </div>
-        <Link className="SLink" to={"/join"}>
-          <p className="Sif">계정이 없다면?</p>
+        <Link className="SILink" to={"/join"}>
+          <p className="SIif">계정이 없다면?</p>
         </Link>
       </section>
     </div>
