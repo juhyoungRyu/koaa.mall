@@ -14,7 +14,6 @@ import NotFound from "./components/NotFound";
 import axios from "axios";
 import logoImg from "./imgs/KOAA LOGO OG (1).png";
 
-
 const App = () => {
   const KEY = "@loginData";
   const initialData = { test: {} };
