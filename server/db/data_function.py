@@ -1,9 +1,11 @@
 # from ~ import ~
+from fastapi.exceptions import HTTPException
 from typing import Union, Any
 from datetime import datetime, timedelta
+from cairo import Status
 from jose import jwt
 from . import setting
-
+from jwt.exceptions import InvalidTokenError, ExpiredSignatureError
 ## 해시화 관련 라이브러리 import
 from passlib.context import CryptContext
 
@@ -68,30 +70,66 @@ def create_user(id, pw, email, name):
     return {"id": id, 'pw': pw, 'email': email, 'name': name}
 
 
-def create_access_token(subject: Union[str, Any],
-                        expires_delta: int = None) -> str:
+def create_access_token(email: Union[str, Any],
+                        id: Union[str, Any],
+                        name: Union[str, Any],
+                        expires_delta: int = None) -> str:  # type: ignore
     if expires_delta is not None:
-        expires_delta = datetime.utcnow() + expires_delta
+        expires_delta = datetime.utcnow() + expires_delta  # type: ignore
     else:
         expires_delta = datetime.utcnow() + timedelta(
-            minutes=setting.ACCESS_TOKEN_EXPIRE_MINUTES)
+            minutes=1)  # type: ignore
 
-    to_encode = {"exp": expires_delta, "sub": str(subject)}
+    to_encode = {
+        "exp": expires_delta,
+        "email": str(email),
+        "id": str(id),
+        "name": str(name),
+    }
     encoded_jwt = jwt.encode(to_encode, setting.JWT_SECRET_KEY,
                              setting.ALGORITHM)
 
     return encoded_jwt
 
 
-def create_refresh_token(subject: Union[str, Any],
-                         expires_delta: int = None) -> str:
+def create_refresh_token(email: Union[str, Any],
+                         id: Union[str, Any],
+                         name: Union[str, Any],
+                         expires_delta: int = None) -> str:  # type: ignore
     if expires_delta is not None:
-        expires_delta = datetime.utcnow() + expires_delta
+        expires_delta = datetime.utcnow() + expires_delta  # type: ignore
     else:
         expires_delta = datetime.utcnow() + timedelta(
-            minutes=setting.ACCESS_TOKEN_EXPIRE_MINUTES)
+            minutes=setting.REFRESH_TOKEN_EXPIRE_MINUTES)  # type: ignore
 
-    to_encode = {"exp": expires_delta, "sub": str(subject)}
-    encoded_jwt = jwt.encode(to_encode, 'secret', setting.ALGORITHM)
+    to_encode = {
+        "exp": expires_delta,
+        "email": str(email),
+        "id": str(id),
+        "name": str(name),
+    }
+    encoded_jwt = jwt.encode(to_encode, setting.JWT_REFRESH_SECRET_KEY,
+                             setting.ALGORITHM)
 
     return encoded_jwt
+
+
+def decode_token(name, token):
+    if name == 'access_token':
+        try:
+            encode = jwt.decode(token, setting.JWT_SECRET_KEY,
+                                setting.ALGORITHM)
+            return encode['name']
+        except ExpiredSignatureError:
+            raise HTTPException(status_code=401, detail="Token expired")
+        except InvalidTokenError:
+            raise HTTPException(status_code=401, detail="Invalid token error")
+    else:
+        try:
+            encode = jwt.decode(token, setting.JWT_REFRESH_SECRET_KEY,
+                                setting.ALGORITHM)
+            return encode['name']
+        except ExpiredSignatureError:
+            raise HTTPException(status_code=401, detail="Token expired")
+        except InvalidTokenError:
+            raise HTTPException(status_code=401, detail="Invalid token error")

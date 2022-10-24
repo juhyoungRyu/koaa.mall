@@ -1,6 +1,7 @@
 # Foriegn Moduels
 import os
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 # My Moduels
@@ -32,13 +33,31 @@ def send_data():
     return data
 
 
+# {
+#     "access_token":
+#     data_function.create_access_token(result['email']),  # type: ignore
+#     "refresh_token":
+#     data_function.create_refresh_token(result['email'])  # type: ignore
+# }
+
+
 @app.post('/login')
-async def login_test(user: Models.Login_user):
+async def login_test(user: Models.Login_user, response: Response):
     result = data_function.is_user(database.user, user.id, user.pw)
-    return {
-        "access_token": data_function.create_access_token(result['email']),
-        "refresh_token": data_function.create_refresh_token(result['email'])
-    }
+    print(result)
+    response.set_cookie(
+        key="access_token",
+        value=data_function.create_access_token(
+            result['email'],  # type: ignore
+            result['id'],  # type: ignore
+            result['name']))  #type: ignore
+    response.set_cookie(
+        key="refresh_token",
+        value=data_function.create_refresh_token(
+            result['email'],  # type: ignore
+            result['id'],  # type: ignore
+            result['name']))  # type: ignore
+    return True
 
 
 @app.post('/join')

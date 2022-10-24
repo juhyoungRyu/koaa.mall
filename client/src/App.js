@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Cookies } from "react-cookie";
 import "./App.css";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
@@ -13,11 +14,13 @@ import Shop from "./components/Shop";
 import NotFound from "./components/NotFound";
 import axios from "axios";
 import logoImg from "./imgs/KOAA LOGO OG (1).png";
+import jwt_decode from "jwt-decode";
 
 const App = () => {
   const KEY = "@loginData";
   const initialData = { test: {} };
   const location = useLocation();
+  const cookies = new Cookies();
   const [data, setData] = useState(initialData);
   const [loc, setLoc] = useState(location.pathname);
   const [isLogin, setIsLogin] = useState(() => {
@@ -32,13 +35,23 @@ const App = () => {
   });
 
   useEffect(() => {
+    let co = cookies.get("access_token");
+    if (co) {
+      co = jwt_decode(co);
+      // console.log(co.exp);
+      // console.log(new Date(co.exp));
+      console.log(new Date() > new Date(co.exp) ? "시간 초과" : "아직 유효함");
+    }
+  }, []);
+
+  useEffect(() => {
     fetchData().then((res) => {
       setData(res);
     });
   }, []);
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:8000/data");
+    const response = await axios.get("/data");
     return response.data;
   };
 
@@ -74,7 +87,14 @@ const App = () => {
             element={
               <section className="Main">
                 {/* 첫 화면 : 사진 한장씩 슬라이드..*/}
-                <div className="imgZone" onClick={() => console.log(data)}>
+                <div
+                  className="imgZone"
+                  onClick={() => {
+                    console.log(data);
+                    let co = cookies.get("access_token");
+                    console.log(jwt_decode(co));
+                  }}
+                >
                   이미지
                 </div>
               </section>
