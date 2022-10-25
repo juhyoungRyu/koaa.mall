@@ -1,15 +1,18 @@
-from subprocess import call
-from fastapi import FastAPI, HTTPException
+# Foriegn Moduels
+import os
+from fastapi import FastAPI, HTTPException, Response
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+
+# My Moduels
 from db import database
 from db import data_function
+from db import setting
 import Models
 
 app = FastAPI()
 
-origins= [
-    "http://localhost:3000"
-]
+origins = ["http://localhost:3000"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -19,30 +22,54 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-data = {'user' : [], 'item' : []}
+data = {'user': [], 'item': []}
 
 data['user'] = data_function.loading_data(database.user, "user_list")
 data['item'] = data_function.loading_data(database.item, "item_list")
+
 
 @app.get('/data')
 def send_data():
     return data
 
+
+# {
+#     "access_token":
+#     data_function.create_access_token(result['email']),  # type: ignore
+#     "refresh_token":
+#     data_function.create_refresh_token(result['email'])  # type: ignore
+# }
+
+
 @app.post('/login')
-async def login_test(user:Models.Login_user):
+async def login_test(user: Models.Login_user, response: Response):
     result = data_function.is_user(database.user, user.id, user.pw)
     print(result)
-    return result
+    response.set_cookie(
+        key="access_token",
+        value=data_function.create_access_token(
+            result['email'],  # type: ignore
+            result['id'],  # type: ignore
+            result['name']))  #type: ignore
+    response.set_cookie(
+        key="refresh_token",
+        value=data_function.create_refresh_token(
+            result['email'],  # type: ignore
+            result['id'],  # type: ignore
+            result['name']))  # type: ignore
+    return True
+
 
 @app.post('/join')
-async def join_test(join_user : Models.Create_user):
+async def join_test(join_user: Models.Create_user):
     is_unique = data_function.check_unique(database.user, join_user)
     if is_unique is False:
-        return {"error" : "This account already exists"}
-    new_user = data_function.create_user(join_user.id, join_user.pw, join_user.email, join_user.name)
-    
+        return {"error": "This account already exists"}
+    new_user = data_function.create_user(join_user.id, join_user.pw,
+                                         join_user.email, join_user.name)
+
     try:
         database.user.insert_one(new_user)
-        return {'success' : 'Success to create user'}
+        return {'success': 'Success to create user'}
     except:
-        return {'error' : 'Failed to create user'}
+        return {'error': 'Failed to create user'}

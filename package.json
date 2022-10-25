@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/juhyoungRyu/koaa.mall/issues"
   },
-  "homepage": "https://github.com/juhyoungRyu/koaa.mall#readme"
+  "homepage": "https://github.com/juhyoungRyu/koaa.mall#readme",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "react-cookie": "^4.1.1",
+    "react-jwt": "^1.1.7"
+  }
 }
