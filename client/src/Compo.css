@@ -405,7 +405,7 @@
 
   .C_titlesec {
     width: 100%;
-    height: 10%;
+    height: 85px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -413,6 +413,7 @@
   }
   .C_title {
     font-size: 23px;
+    width: auto;
   }
 
   .C_itemCon {
@@ -420,9 +421,12 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    /* border-top: 1px solid #000;
+    border-bottom: 1px solid #000; */
   }
+
   .C_item {
-    width: 100%;
+    width: 93%;
     height: 85px;
     display: flex;
     flex-direction: row;
@@ -432,7 +436,7 @@
     padding-bottom: 30px;
   }
   .C_itemImg {
-    width: 90px;
+    width: 100px;
     height: 85px;
     display: flex;
   }
@@ -441,6 +445,7 @@
     height: auto;
     display: flex;
     justify-content: center;
+    margin-right: 5px;
   }
   .core {
     width: 15px;
@@ -452,6 +457,7 @@
   .C_img {
     width: 70px;
     height: 85px;
+    margin-left: 5px;
   }
 
   .C_infos {
@@ -460,12 +466,85 @@
     display: flex;
     flex-direction: column;
   }
+
   .C_high {
-    width: 90%;
+    width: calc(100% - 5px);
     height: auto;
     display: flex;
+    margin-left: 5px;   
+    justify-content: space-between;
+  }
+  .C_pdtname {
+    font-size: 12px;
+  }
+  .C_xBtn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .C_mid {
+    width: calc(100% - 5px);
+    height: 16px;
+    margin-left: 5px;
+  }
+  .C_size {
+    font-size: 12px;
   }
 
+  .C_low {
+    width: calc(100% - 5px);
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-top: 24px;
+  } 
+  .C_amountBtnCon {
+    width: 84px;
+    height: 24px;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+  }
+  .C_minus, .C_plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .C_amountBtn {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 0;
+    border: 0;
+    background-color: #D9D9D9;
+    font-size: 20px;
+  }
+  .C_amountBtn:hover {
+    background-color: #c4c4c4;
+  }
+  .C_amountNum {
+    width: 34px;
+    height: 20px;
+    padding: 0;
+    border: 0;
+    text-align: center;
+  }
+
+  .C_priceCon {
+    width: auto;
+    
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
   /* SignUp */
   .SUcon {
     width: 100%;
