@@ -42,13 +42,14 @@
   .sideLogoImg {
     width: 60px;
     height: 60px;
+    margin-left: 18px;
   }
 
   .S_btnCon {
     width: 120px;
     height: 60px;
     display: flex;
-    margin-left: 20px;
+    margin-left: 38px;
     align-items: center;
   }
 

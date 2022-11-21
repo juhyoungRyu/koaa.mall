@@ -11,6 +11,7 @@ import About from "./components/About";
 import Mypage from "./components/Mypage";
 import Cart from "./components/Cart";
 import Shop from "./components/Shop";
+import PdtDetail from "./components/PdtDetail";
 import NotFound from "./components/NotFound";
 import axios from "axios";
 import logoImg from "./imgs/KOAA LOGO OG (1).png";
@@ -109,6 +110,7 @@ const App = () => {
           <Route path="/mypage" element={<Mypage isLogin={isLogin} />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/pdtDetail" element={<PdtDetail />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
         {/* 메인화면 : Carousel 들어갈 예정 */}

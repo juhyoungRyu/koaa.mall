@@ -22,36 +22,7 @@ const Shop = () => {
           <span className="S_pdtName">[22FW] KOAA CANDY SWEATSHIRT</span>
           <span className="S_price">28,000 KRW</span>
         </div>
-        <div className="S_product">
-          <div className="S_pdtImg"></div>
-          <span className="S_pdtName">[22FW] KOAA CANDY SWEATSHIRT</span>
-          <span className="S_price">28,000 KRW</span>
-        </div>
-        <div className="S_product">
-          <div className="S_pdtImg"></div>
-          <span className="S_pdtName">[22FW] KOAA CANDY SWEATSHIRT</span>
-          <span className="S_price">28,000 KRW</span>
-        </div>
-        <div className="S_product">
-          <div className="S_pdtImg"></div>
-          <span className="S_pdtName">[22FW] KOAA CANDY SWEATSHIRT</span>
-          <span className="S_price">28,000 KRW</span>
-        </div>
-        <div className="S_product">
-          <div className="S_pdtImg"></div>
-          <span className="S_pdtName">[22FW] KOAA CANDY SWEATSHIRT</span>
-          <span className="S_price">28,000 KRW</span>
-        </div>
-        <div className="S_product">
-          <div className="S_pdtImg"></div>
-          <span className="S_pdtName">[22FW] KOAA CANDY SWEATSHIRT</span>
-          <span className="S_price">28,000 KRW</span>
-        </div>
-        <div className="S_product">
-          <div className="S_pdtImg"></div>
-          <span className="S_pdtName">[22FW] KOAA CANDY SWEATSHIRT</span>
-          <span className="S_price">28,000 KRW</span>
-        </div>
+  
       </div>
     </div>
   );
