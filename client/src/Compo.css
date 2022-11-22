@@ -1,7 +1,8 @@
 @media (max-width: 650px) {
-  @import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap");
+  
+  @import url('https://fonts.googleapis.com/css2?family=Asap:wght@100;200;300;400;500;600;700;800&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
   body {
-    font-family: "Asap", sans-serif;
+    font-family: 'JetBrains Mono', monospace;
   }
   /* Navigation */
   .Navigation {
@@ -90,6 +91,9 @@
     justify-content: center;
     text-align: center;
     font-size: 23px;
+  }
+  .brandName {
+    font-family: "Asap";
   }
 
   .footerBold {
@@ -719,20 +723,85 @@
   }
 
   /* PdtDetail */
-
   .PdtDetail {
     width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .PdtDetailCon {
+    width: calc(100% - 40px);
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .pdtImg {
     width: 350px;
     height: 360px;
     background-color: #d9d9d9;
+  }
+
+  .pdtContent {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .pdtTit {
+    width: auto;
+    font-size: 18px;
+  }
+  .price {
+    width: auto;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .selectSize {
+    width: 100%;
+    height: 30px;
+    margin-top: 15px;
+  }
+  .selectSize:focus {
+    outline: none;
+  }
+
+  .pdtBtnCon {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .pdtBtn {
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+  }
+  .addCart {
+    background-color: #D9D9D9;
+  }
+  .buy {
+    background-color: #335696;
+    color: #fff;
+    margin-left: 20px;
+  }
+
+  .pdtInfo {
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+  }
+  .pdtImgDetail {
+    width: 100%;
   }
 
   /* NotFound */

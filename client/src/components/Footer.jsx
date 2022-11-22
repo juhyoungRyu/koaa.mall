@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="Footer">
       <section className="footerTitle">
-        <h3>Korean Oriental And Asian</h3>
+        <h3 className="brandName">Korean Oriental And Asian</h3>
       </section>
       <section className="footerBold">
         <section className="instaZone">
