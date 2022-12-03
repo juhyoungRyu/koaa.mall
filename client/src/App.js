@@ -13,7 +13,7 @@ import Cart from "./components/Cart";
 import Shop from "./components/Shop";
 import PdtDetail from "./components/PdtDetail";
 import NotFound from "./components/NotFound";
-import Datas from "./components/Datas";
+import Admin from "./components/Admin";
 import axios from "axios";
 import logoImg from "./imgs/KOAA LOGO OG (1).png";
 import jwt_decode from "jwt-decode";
@@ -113,6 +113,8 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/pdt" element={<PdtDetail />} />
           <Route path="/*" element={<NotFound />} />
+
+          <Route path="/admin" element={<Admin />} />
         </Routes>
         {/* 메인화면 : Carousel 들어갈 예정 */}
         {/* 푸터 : 사업자 정보 등이 들어간 컴포넌트 */}
