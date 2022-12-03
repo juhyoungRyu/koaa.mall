@@ -1,6 +1,7 @@
 import React from "react";
 import sizeChart from "../imgs/sizeChart.jpg";
 import content from "../imgs/content.jpg";
+import pdtData from "./Datas";
 
 const PdtDetail = () => {
 
@@ -9,8 +10,8 @@ const PdtDetail = () => {
             <div className="PdtDetailCon">
                 <div className="pdtImg"></div>
                 <div className="pdtContent">
-                    <span className="pdtTit">[22FW] NO NEED EDUCATED HOOD</span>
-                    <span className="price">30,000 KRW</span>
+                    <span className="pdtTit">{pdtData[0].name}</span>
+                    <span className="price">{pdtData[0].price} KRW</span>
                     <select name="sizes" id="" className="selectSize">
                         <option value="">사이즈 선택</option>
                         <option value="S">S</option>

@@ -1,4 +1,5 @@
 import React from "react";
+import pdtData from "./Datas";
 import "../Compo.css";
 
 const Shop = () => {
@@ -14,12 +15,12 @@ const Shop = () => {
       <div className="S_productsCon">
         <div className="S_product">
           <div className="S_pdtImg"></div>
-          <span className="S_pdtName">[22FW] NO NEED EDUCATED HOOD</span>
-          <span className="S_price">30,000 KRW</span>
+          <span className="S_pdtName">{pdtData[0].name}</span>
+          <span className="S_price">{pdtData[0].price} KRW</span>
         </div>
         <div className="S_product">
           <div className="S_pdtImg"></div>
-          <span className="S_pdtName">[22FW] KOAA CANDY SWEATSHIRT</span>
+          <span className="S_pdtName">KOAA CANDY SWEATSHIRT</span>
           <span className="S_price">28,000 KRW</span>
         </div>
   
