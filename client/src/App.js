@@ -139,7 +139,7 @@ const App = () => {
             </div>
           ) : (
             <div className="S_btnCon">
-              <p className="S_userName">{isLogin.name}</p>
+              <p className="S_userName">{isLogin.user.name}</p>
             </div>
           )}
         </div>
